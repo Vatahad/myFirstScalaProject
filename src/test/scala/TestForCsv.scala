@@ -1,8 +1,9 @@
 import org.specs2._
 
-class TestForCsv extends Specification{
+class TestForCsv extends Specification {
 
-  def is = s2"""
+  def is =
+    s2"""
 
       Csv file from gzip:
 
@@ -13,6 +14,7 @@ class TestForCsv extends Specification{
   val readCsv = new ReadCsv
   var csv = readCsv.readCsvAndAddItToList("planes_log.csv")
 
-  def e1 = csv.size must_==(471949)
-  def e2 = csv(0).getYear must_==(2014)
+  def e1 = csv.size must_== (471949)
+
+  def e2 = csv(0).getYear must_== (2014)
 }
